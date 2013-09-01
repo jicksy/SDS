@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reports</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+<body>
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+    <h4>View Reports</h4></br>
+<table class="table table-striped" border="1">
+
+<th> Institution </th>
+<th> Date </th>
+
+{% for each_report in report %}
+<tr>
+
+	<td><a href="{% url 'Detail:report_details' each_report.id %}">{{ each_report.institution }}</a></td>
+	<td>{{ each_report.date }}</td>
+
+	
+</tr>
+{% endfor %}
+</table>
+<a class="btn btn-primary" href="{% url 'Detail:add_report' %}"> Add Sales Report </a>
+
+</body>
+</html>

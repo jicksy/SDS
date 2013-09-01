@@ -1,0 +1,26 @@
+{% for each_person in salesperson %}
+<p>{{each_person.user}} <br>
+	{{each_person.contactNumber}}</p>
+
+
+
+<table border="1" width="50%">
+
+<tr>
+	<th>Institution</th>
+	<th>Date</th>
+
+</tr>
+{% for each_report in report %}
+{%  ifequal each_report.salesperson  each_person.user  %}
+<tr>
+	
+	<td>{{ each_report.institution }}</td>
+	<td>{{each_report.date}}</td>
+	
+</tr>
+{% endifequal %}
+{% endfor %}  
+</table>
+{% endfor %}
+

@@ -1,0 +1,20 @@
+
+<table border="1" width="50%">
+
+<tr>
+	<th>Institution Name</th>
+	<th>Region</th>
+	<th>SubRegion</th>
+	<th>Pincode</th>
+</tr>
+{% for each_inst in inst %}
+<tr>
+	
+	<td>{{ each_inst.name }}</td>
+	<td>{{ each_inst.region }}</td>
+	<td>{{ each_inst.subregion }}</td>
+	<td>{{ each_inst.pin_code }}</td>
+</tr>
+{% endfor %}  
+
+</table>

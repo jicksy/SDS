@@ -1,0 +1,17 @@
+<table border="1" width="50%">
+
+<tr>
+	<th>Name</th>
+	<th>Subject</th>
+	<th>grade</th>
+</tr>
+{% for each_item in item %}
+<tr>
+	
+	<td>{{ each_item.name }}</td>
+	<td>{{ each_item.subject }}</td>
+	<td>{{ each_item.grade}}</td>
+</tr>
+{% endfor %}  
+<a href="{% url 'Detail:add_item' %}"> Add item</a>
+</table>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Home</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<!-- Bootstrap -->
+    	<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="../static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<style>
+body{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	margin:100px; padding:100px;
+	text-align:center;
+}	
+fieldset{
+    overflow: hidden;
+    background-color: #eee;
+}
+</style>
+</head>
+<body>
+	<h1>This is user home</h1>
+	</tr></tr>
+	<a class="btn btn-danger" href="{% url 'Login:logout' %}">Logout</a> </br></br></br>
+	{% if messages %}
+		<ul class="messages">
+    	{% for message in messages %}
+    		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    	{% endfor %}
+		</ul>
+	{% endif %}
+	<!--
+	<div align = "center">
+	<table>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Report</legend>
+			<a href="{% url 'Detail:add_report' %}"> Add report</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Region</legend>
+			<a href="{% url 'Detail:add_region' %}"> Add region</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Sub region</legend>
+			<a href="{% url 'Detail:add_sub_region' %}"> Add subregion</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Institution</legend>
+			<a href="{% url 'Detail:add_institution' %}"> Add institution</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Institution staff</legend>
+			<a href="{% url 'Detail:add_institution_staff' %}"> Add institution staff</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Item subject</legend>
+			<a href="{% url 'Detail:add_item_category' %}"> Add item subject</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Item</legend>
+			<a href="{% url 'Detail:add_item' %}"> Add item</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Visit</legend>
+			<a href="{% url 'Detail:add_visit' %}"> Add visit</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Expense</legend>
+			<a href="{% url 'Salesperson:add_expense' %}"> Add expense</a>
+			</fieldset >
+		</div>
+		</td>
+	</table>
+	</div>
+	<a href="{% url 'Detail:view_institution' %}"> View Institutions </a></br>
+	<a href="{% url 'Detail:view_report' %}"> View Reports </a></br>
+	<a href="{% url 'Detail:view_visits' %}"> View Visits </a>
+-->
+
+<a class ="btn btn-primary "href="{% url 'Detail:view_report' %}"> Reports </a> </br></br>
+<a class="btn btn-primary" href="{% url 'Detail:view_institution' %}"> Institutions List</a></br></br>
+<a class = "btn btn-primary" href="{% url 'Detail:view_visits' %}"> Visit Dates </a></br></br>
+<a class= "btn btn-primary" > Expenses </a>
+
+</body>
+</html>

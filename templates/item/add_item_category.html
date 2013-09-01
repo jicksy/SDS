@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Add item category</title>
+           
+    <head>
+    <body>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <form action= " {% url 'Detail:add_item_category' %}" method="post">
+            {% csrf_token %}
+            <table>
+            {% for each_field in form %}   
+                <tr>
+                    <td>{{each_field.label}}</td>
+                    <td>{{each_field}}</td>
+                    <td>{{each_field.errors}}</td>
+                </tr>   
+            {% endfor %}
+            </table>         
+            <input type="submit" value="Add item category">
+        </form>
+    </body>
+<html1>

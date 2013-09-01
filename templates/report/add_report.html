@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Add report</title>
+    </head>
+    <body>
+            {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        <form action= " {% url 'Detail:add_report' %}" method="post">
+            {% csrf_token %}
+            <table>
+            {% for each_field in form %}   
+                <tr>
+                    <td>{{each_field.label}}</td>
+                    <td>{{each_field}}</td>
+                    <td>{{each_field.errors}}</td>
+                </tr>   
+            {% endfor %}
+            </table>
+
+            <fieldset>
+                <legend>Sale Items</legend>
+                {{ sale.management_form }}
+                {% for saleform in sale.forms %}
+                    <div>
+                        {{ saleform }}
+                    </div>
+                {% endfor %}
+                <input title='Add A New Sale Item' type='submit' name='add_sale' value='Add Item' />
+            </fieldset>
+
+            <fieldset>
+                <legend>Scope Items</legend>
+                {{ scope.management_form }}
+                {% for scopeform in scope.forms %}
+                    <div>
+                        {{ scopeform }}
+                    </div>
+                {% endfor %}
+                <input title='Add A New Scope Item' type='submit' name='add_scope' value='Add Scope' />
+            </fieldset>
+            <!-- </form>         -->
+            <input type="submit" value="Add report">
+        </form>
+    </body>
+<html1>

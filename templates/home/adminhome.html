@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Home</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<style>
+body{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	margin:100px; padding:100px;
+	text-align:center;
+}	
+fieldset{
+    overflow: hidden;
+    background-color: #eee;
+}
+</style>
+</head>
+<body>
+	<h1>Admin DashBoard</h1>
+	</tr></tr>
+	<a href="{% url 'Login:logout' %}">Logout</a>
+	{% if messages %}
+		<ul class="messages">
+    	{% for message in messages %}
+    		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    	{% endfor %}
+		</ul>
+	{% endif %}
+	<div align = "center">
+	<table>
+	
+		
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Institution</legend>
+			<a href="{%  url 'Adminprofile:institution-view' %}"> Institution </a>
+			 
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Items</legend>
+			<a href="{% url 'Adminprofile:item-view' %}">Items</a>
+		
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Item subject</legend>
+			<a href="{% url 'Adminprofile:location-view' %}"> Location</a>
+			</fieldset >
+		</div>
+		</td>
+		<td>
+		<div>
+			<fieldset style="width:100%">
+			<legend>Item</legend>
+			<a href="{% url 'Adminprofile:salesperson-view' %}">Manage Salesperson </a>
+			
+			</fieldset >
+		</div>
+		</td>
+	</table>
+	</div>
+

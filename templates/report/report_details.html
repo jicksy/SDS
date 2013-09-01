@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reports</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+<body>
+	<h4>Report</h4>
+<table class="table table-hover">
+	<tr>
+
+		<th> Institution</th>
+		<th> Report Date</th>
+		<th> Meeting Note </th>
+		<th> Stage of negotiation </th> </tr>
+	</tr>
+	<tr>
+		<td>{{report.institution}}</td>
+		<td>{{report.date}}</td>
+		<td>{{report.meeting_note}}</td>
+		<td>{{report.stage_of_negotiation}}</td>
+	</tr>
+</table>
+<table class="table table-hover">
+</br>
+<h4>Sale Items</h4>
+    <tr>
+			<th> Item Name </th>
+			<th> Count </th>
+		</tr>
+	{% for item in sale %}
+		
+		<tr>
+
+			<td>{{item.sale_item}}</td>
+			<td>{{item.sale_count}}</td>
+		</tr>
+	{% endfor %}
+        </br>
+</table>
+
+<table class="table table-hover">
+<h4>Scope Items</h4><br>
+    <tr>
+			<th> Item Name </th>
+			<th> Count </th>
+		</tr>
+	{% for item in scope %}
+		<tr>
+			<td>{{item.scope_item}}</td>
+			<td>{{item.scope_count}}</td>
+		</tr>
+	{% endfor %}	
+</table>
+</body>
+</html>

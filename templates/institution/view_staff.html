@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reports</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+<body>
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+<table class="table table-striped" border="1">
+<tr>
+<th>Staff</th>
+<th>Designation</th>
+<th>Institution</th>
+</tr>
+{% for each_staff in staff %}
+<tr>
+<td>{{ each_staff.first_name }}  {{ each_staff.last_name }}</td>
+<td>{{ each_staff.designation }}</td>
+<td>{{ each_staff.institution }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Add expense</title>
+    </head>
+
+    <body>
+            {% if messages %}
+              <ul class="messages">
+              {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+        <form action= " {% url 'Salesperson:add_expense' %}" method="post">
+            {% csrf_token %}
+            <table>
+            {% for each_field in form %}   
+                <tr>
+                    <td>{{each_field.label}}</td>
+                    <td>{{each_field}}</td>
+                    <td>{{each_field.errors}}</td>
+                </tr>   
+            {% endfor %}
+            </table>
+
+            <fieldset>
+                <legend>Expense details</legend>
+                {{ detail.management_form }}
+                {% for detailform in detail.forms %}
+                    <div>
+                        {{ detailform }}
+                    </div>
+                {% endfor %}
+                <input title='Add A New Expense Item' type='submit' name='add_more' value='Add Item' />
+            </fieldset>
+
+            <input type="submit" value="Add expense">
+        </form>
+    </body>
+<html1>

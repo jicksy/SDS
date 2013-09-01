@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Institution details</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+    <h4>Institution</h4>
+<body style="padding:20px">
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <table class="table table-striped span6" border="1">
+        <tr>
+            <td>Name:</td><td>{{ instt.name }}</td>
+        </tr>
+        <tr>
+            <td>Region:</td><td>{{ instt.region}}</td>
+        </tr>
+        <tr>
+            <td>SubRegion:</td><td>{{ instt.subregion }}</td>
+        </tr>
+        <tr>
+            <td>Pincode:</td><td>{{ instt.pin_code }}</td>
+        </tr>
+    </table>
+    <div style="clear:both">&nbsp;</div>
+ <!--   
+    <h4>Items Purchased</h4>
+    <table class="table table-striped span3" border="1">
+        <tr>
+            <th>Item</th>
+            <th>Count</th>
+        </tr>
+        {% for each_item in items %}
+        <tr>
+            <td>{{ each_item.sale_item.name }}</td>
+            <td>{{ each_item.sale_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="clear:both">&nbsp;</div>
+    
+    <h4>Scope for additional items</h4>
+
+    <table class="table table-striped span3" border="1">
+        <tr>
+            <th>Item</th>
+            <th>Count</th>
+        </tr>
+        {% for each_item in items %}
+        <tr>
+            <td>{{ each_item.scope_item.name }}</td>
+            <td>{{ each_item.scope_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div style="clear:both">&nbsp;</div>
+    <h4>Institution Staff Details</h4>
+    <table class="table table-striped span3" border="1">
+    <tr>
+        <th>Staff</th>
+        <th>Designation</th>
+        <th>Institution</th>
+    </tr>
+    {% for each_staff in staff %}
+        <td>{{ each_staff.first_name }}  {{ each_staff.last_name }}</td>
+        <td>{{ each_staff.designation }}</td>
+        <td>{{ each_staff.institution }}</td>
+    {% endfor %}
+    </table>
+-->
+<table class="table table-hover">
+    <h4>Items purchased</h4>
+    <tr>
+            <th> Item Name </th>
+            <th> Count </th>
+        </tr>
+    {% for item in sale %}
+        
+        <tr>
+
+            <td>{{item.sale_item}}</td>
+            <td>{{item.sale_count}}</td>
+        </tr>
+    {% endfor %}
+        </br>
+</table>
+
+<table class="table table-hover">
+<h4>Scope for Aditional Items</h4><br>
+    <tr>
+            <th> Item Name </th>
+            <th> Count </th>
+        </tr>
+    {% for item in scope %}
+        <tr>
+            <td>{{item.scope_item}}</td>
+            <td>{{item.scope_count}}</td>
+        </tr>
+    {% endfor %}    
+
+
+
+
+
+</body>
+</html>

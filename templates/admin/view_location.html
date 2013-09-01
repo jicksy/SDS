@@ -1,0 +1,24 @@
+
+{% for each_region in region %}
+<p>{{each_region.name}}</p>
+
+
+
+<table border="1" width="50%">
+
+<tr>
+	<th>Subregion</th>
+
+</tr>
+{% for each_subregion in subregion %}
+{%  ifequal each_subregion.region.name  each_region.name  %}
+<tr>
+	
+	<td>{{ each_subregion.name }}</td>
+	
+</tr>
+{% endifequal %}
+{% endfor %}  
+</table>
+{% endfor %}
+<a href="{% url 'Detail:add_region' %}"> Add item</a>

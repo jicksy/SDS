@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Institution list</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="../static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+<body>
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <h4>Select Institution</h4>
+<table class="table table-striped" border="1">
+<th> Name </th>
+<th> Region </th>
+<th> Sub region </th>
+<th> Pin code </th>
+{% for each_inst in inst %}
+<tr>
+	<td><a href="{% url 'Detail:institution_details' each_inst.id %}">{{ each_inst.name }}</a></td>
+	<td>{{ each_inst.region }}</td>
+	<td>{{ each_inst.subregion }}</td>
+	<td>{{ each_inst.pin_code }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
